@@ -10,8 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_26_105618) do
-# Could not dump table "tasks" because of following StandardError
-#   Unknown type 'false' for column 'completed'
-
+ActiveRecord::Schema[7.2].define(version: 2024_11_26_105007) do
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.text "details"
+    t.boolean "completed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 end
